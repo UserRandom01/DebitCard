@@ -1,292 +1,302 @@
 :root {
-    --ffpoppins: "Poppins", sans-serif;
-    --ffroboto: "Roboto", sans-serif;
-    --ffoswald: "Oswald", sans-serif;
+  --ffpoppins: "Poppins", sans-serif;
+  --ffroboto: "Roboto", sans-serif;
+  --ffoswald: "Oswald", sans-serif;
 
-    --colorWhite: rgba(255, 255, 255, 0.9);
+  --colorWhite: rgba(255, 255, 255, 0.9);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    place-content: center;
-    font-family: var(--ffpoppins);
-    color: var(--colorWhite);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  font-family: var(--ffpoppins);
+  color: var(--colorWhite);
+  background: linear-gradient(white, rgba(0, 0, 0, 0.5));
 }
 
 .container {
-    width: 570px;
-    height: 350px;
-    padding: 12px;
-    perspective: 1000px;
+  width: 570px;
+  height: 350px;
+  padding: 12px;
+  perspective: 1000px;
 }
 
-.container:hover .cardCnt {
-    transform: rotatey(180deg);
+.button {
+  background: #333;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
 }
-
+.button:active {
+  scale: 1.1;
+}
 .cardCnt {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all .6s ease;
-    box-shadow: 0 0 30px -6px black;
-    border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.6s ease;
+  box-shadow: 0 0 30px -6px black;
+  border-radius: 12px;
+  /* animation: cardRotater 6s linear infinite; */
+}
+
+@keyframes cardRotater {
+  100% {
+    transform: rotatey(360deg);
+  }
 }
 
 .card {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    background: red;
-    background: #E61F27;
-    background: #EB2028;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
 
-    border-radius: 12px;
-    padding: 12px;
+  background: #eb2028;
+
+  border-radius: 12px;
+  padding: 12px;
 }
 
-
-
-
 .cardFrontTop {
-    height: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cardFront .logocnt {
-    width: 40%;
+  width: 40%;
 }
 
 .logocnt img {
-    width: 100%;
+  width: 100%;
 }
 
 .mainTitle {
-    font-weight: 400;
-    font-size: 1.5em;
-    margin-right: 20px;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-right: 20px;
 }
 
 .mainTitle span {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .cardFrontMid {
-    display: flex;
-    align-items: center;
-    margin: 12px;
+  display: flex;
+  align-items: center;
+  margin: 12px;
 }
 
 .cardFrontMid img {
-    width: 60px;
+  width: 60px;
 }
 
 .cardSmartChip {
-    width: 80px;
-    height: 60px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-right: 20px;
+  width: 80px;
+  height: 60px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
 .cardSmartChip img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .cardNumber {
-    font-size: 1.8em;
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-    margin: auto;
-    text-shadow: 2px 2px black;
+  font-size: 1.8em;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  text-shadow: 2px 2px black;
 }
 
 .cardFrontBottom {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.2em;
-    letter-spacing: 2px;
-    align-items: center;
-    height: 25%;
-    overflow: hidden;
-    margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  align-items: center;
+  height: 25%;
+  overflow: hidden;
+  margin-top: 8px;
 }
 
 .cardHolderName {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 .visaCnt {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .visaCnt img {
-    height: 140px;
+  height: 140px;
 }
 
 .expiryDate {
-    display: inline;
-    padding: 6px;
-    position: absolute;
-    bottom: 15%;
-    right: 30%;
-    display: flex;
-    width: 90px;
+  display: inline;
+  padding: 6px;
+  position: absolute;
+  bottom: 15%;
+  right: 30%;
+  display: flex;
+  width: 90px;
 }
 
 .expiryDate div {
-    font-size: .65em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 10px;
+  font-size: 0.65em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 10px;
 }
 
 .expiryTxt {
-    color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .expiryDateNum {
-    font-size: 1em !important;
+  font-size: 1em !important;
 }
 
 .crn {
-    display: inline;
-    position: absolute;
-    bottom: 8px;
-    left: 20px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: .75em;
+  display: inline;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75em;
 }
 
-
-
-
-
-
-
-
-
-
-
 .cardBack {
-    transform: rotateY(180deg);
-    overflow: hidden;
+  transform: rotateY(180deg);
+  overflow: hidden;
 }
 
 .cardBackTop {
-    font-size: .8em;
-    display: flex;
-    justify-content: center;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
 }
 
 .cardBackBlackStrip {
-    height: 70px;
-    margin: 6px 0;
+  height: 70px;
+  margin: 6px 0;
 }
 
 .cardBackBlackStrip div {
-    width: 110%;
-    height: 100%;
-    background: linear-gradient(black, #111);
-    margin-left: -5%;
+  width: 110%;
+  height: 100%;
+  background: linear-gradient(black, #111);
+  margin-left: -5%;
 }
 
 .cardBackAutSignature {
-    height: 80px;
+  height: 80px;
 }
 
 .autSigTxt {
-    font-size: .65em;
+  font-size: 0.65em;
 }
 
 .stripCnt {
-    height: 60px;
-    width: 100%;
-    padding: 6px 0;
-    display: flex;
-    align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
 }
 
 .repeatingGradientStrip {
-    height: 100%;
-    background: repeating-linear-gradient(white, white 5px, yellow 5px, yellow 10px);
-    width: 60%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    white,
+    white 5px,
+    yellow 5px,
+    yellow 10px
+  );
+  width: 60%;
 }
 
 .cvvTxt {
-    background: var(--colorWhite);
-    color: black;
-    padding: 6px;
-    font-style: italic;
+  background: var(--colorWhite);
+  color: black;
+  padding: 6px;
+  font-style: italic;
 }
 
 .cardBackFooter {
-    height: 130px;
-    width: 100%;
-    font-size: .75em;
-    padding: 0 6px;
+  height: 130px;
+  width: 100%;
+  font-size: 0.75em;
+  padding: 0 6px;
 }
 
 .internationalDCTxt {
-    text-align: center;
-    margin: 6px;
+  text-align: center;
+  margin: 6px;
 }
 
 .fnssmall {
-    font-size: .65em;
+  font-size: 0.65em;
 }
 
 .supportDetails {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .qrcodeCnt {
-    height: 80px;
-    width: 80px;
-    background: var(--colorWhite);
-    position: absolute;
-    top: 38%;
-    right: 24px;
-    padding: 4px;
+  height: 80px;
+  width: 80px;
+  background: var(--colorWhite);
+  position: absolute;
+  top: 38%;
+  right: 24px;
+  padding: 4px;
 }
 
 .qrcodeCnt img {
-    height: 100%;
+  height: 100%;
 }
 
 .scanForOfferTxt {
-    text-align: center;
-    font-size: .75em;
+  text-align: center;
+  font-size: 0.75em;
 }
 
+@media screen and (max-width: 600px) {
+  section {
+    overflow: hidden;
+  }
 
-
-@media screen and (max-width :600px) {
-    body {}
-
-    section {
-        overflow: hidden;
-    }
-
-    .container {
-        scale: .6;
-        transform: translate(-150px);
-    }
+  .container {
+    scale: 0.6;
+    transform: translate(-150px);
+  }
 }
